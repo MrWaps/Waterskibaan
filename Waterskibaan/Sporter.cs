@@ -3,11 +3,13 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows.Media;
 
 namespace Waterskibaan
 {
-    class Sporter
+    class Sporter : IMoves
     {
+        public int AantalPunten { get; set; }
         public int AantalRondenNogTeGaan { get
             {
                 return 0;
@@ -25,7 +27,13 @@ namespace Waterskibaan
 
         public Sporter(List<IMoves> moves)
         {
+            AantalPunten = 0;
+            Moves = moves;
+        }
 
+        public int Move()
+        {
+            throw new NotImplementedException();
         }
     }
 }
