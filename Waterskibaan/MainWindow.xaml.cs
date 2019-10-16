@@ -13,8 +13,9 @@ namespace Waterskibaan
         public MainWindow()
         {
             InitializeComponent();
-            TestOpdracht8();
-            TestOpdracht10();
+            // TestOpdracht8();
+            // TestOpdracht10();
+            TestOpdracht11();
         }
 
         static void TestOpdracht8()
@@ -73,6 +74,14 @@ namespace Waterskibaan
             }
 
             Console.WriteLine($"{instructieGroep.ToString()}: {instructieGroep.GetAlleSporters().Count}\n");
+        }
+
+        static void TestOpdracht11()
+        {
+            Game game = new Game();
+            Console.WriteLine("Game gemaakt");
+            game.Initialize();
+            Console.WriteLine("Game geïnitialiseerd");
         }
     }
 }
