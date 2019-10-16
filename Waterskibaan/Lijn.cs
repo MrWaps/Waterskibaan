@@ -8,6 +8,7 @@ namespace Waterskibaan
 {
     class Lijn
     {
+        public Sporter Sporter;
         public int PositieOpDeKabel { get; set; }
     }
 }

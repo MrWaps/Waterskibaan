@@ -1,17 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows;
-using System.Windows.Controls;
-using System.Windows.Data;
-using System.Windows.Documents;
-using System.Windows.Input;
-using System.Windows.Media;
-using System.Windows.Media.Imaging;
-using System.Windows.Navigation;
-using System.Windows.Shapes;
+using Waterskibaan.Properties;
 
 namespace Waterskibaan
 {
@@ -23,6 +13,66 @@ namespace Waterskibaan
         public MainWindow()
         {
             InitializeComponent();
+            TestOpdracht8();
+            TestOpdracht10();
+        }
+
+        static void TestOpdracht8()
+        {
+            Sporter sporter1 = new Sporter(MoveCollection.GetWillekeurigeMoves());
+            Sporter sporter2 = new Sporter(MoveCollection.GetWillekeurigeMoves())
+            {
+                Zwemvest = new Zwemvest(),
+                Skies = new Skies()
+            };
+            WaterskibaanProgram waterskibaan = new WaterskibaanProgram();
+
+
+            Console.ForegroundColor = ConsoleColor.Yellow;
+            Console.WriteLine("Opdracht 8:");
+            Console.ResetColor();
+
+            foreach (Sporter s in new Sporter[] { sporter1, sporter2 })
+            {
+                try
+                {
+                    waterskibaan.SporterStart(s);
+                }
+                catch (Exception)
+                {
+                    Console.WriteLine("Geen Zwemvest of Skies");
+                }
+            }
+
+            Console.WriteLine("");
+
+        }
+
+        static void TestOpdracht10()
+        {
+            Wachtrijinstructie wachtrijInstructie = new Wachtrijinstructie();
+            InstructieGroep instructieGroep = new InstructieGroep();
+            WachtrijStarten wachtrijStarten = new WachtrijStarten();
+
+            Console.ForegroundColor = ConsoleColor.Yellow;
+            Console.WriteLine("Opdracht 10:");
+            Console.ResetColor();
+
+            for (int i = 0; i < 100; i++)
+            {
+                wachtrijInstructie.SporterNeemPlaatsInRij(new Sporter(MoveCollection.GetWillekeurigeMoves()));
+            }
+
+            Console.WriteLine($"{wachtrijInstructie.ToString()}: {wachtrijInstructie.GetAlleSporters().Count}");
+
+            List<Sporter> sporters = wachtrijInstructie.SportersVerlatenRij(5);
+
+            foreach (Sporter sporter in sporters)
+            {
+                instructieGroep.SporterNeemPlaatsInRij(sporter);
+            }
+
+            Console.WriteLine($"{instructieGroep.ToString()}: {instructieGroep.GetAlleSporters().Count}\n");
         }
     }
 }
