@@ -34,6 +34,9 @@
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
+  <PropertyGroup>
+    <StartupObject />
+  </PropertyGroup>
   <ItemGroup>
     <Reference Include="System" />
     <Reference Include="System.Data" />
@@ -55,13 +58,18 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
+    <Compile Include="EenBeen.cs" />
+    <Compile Include="EenHand.cs" />
     <Compile Include="IMoves.cs" />
+    <Compile Include="Jump.cs" />
     <Compile Include="Kabel.cs" />
     <Compile Include="Lijn.cs" />
     <Compile Include="LijnenVoorraad.cs" />
+    <Compile Include="MoveCollection.cs" />
+    <Compile Include="Omdraaien.cs" />
     <Compile Include="Skies.cs" />
     <Compile Include="Sporter.cs" />
-    <Compile Include="Waterskibaan.cs" />
+    <Compile Include="WaterskibaanProgram.cs" />
     <Compile Include="Zwemvest.cs" />
     <Page Include="MainWindow.xaml">
       <Generator>MSBuild:Compile</Generator>

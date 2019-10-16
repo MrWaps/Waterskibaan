@@ -32,6 +32,7 @@ namespace Waterskibaan
             {
                 if (l.PositieOpDeKabel == 9)
                 {
+                    _lijnen.Last.Value.Sporter.AantalRondenNogTeGaan--;
                     l.PositieOpDeKabel = 0;
                 }
                 else
@@ -43,12 +44,12 @@ namespace Waterskibaan
 
         public Lijn VerwijderLijnVanKabel()
         {
-            if (_lijnen.Last.Value == null)
-            {
-                return null;
-            } else
+            if (_lijnen.Last.Value != null && _lijnen.Last.Value.Sporter.AantalRondenNogTeGaan == 1)
             {
                 return _lijnen.Last.Value;
+            } else
+            {
+                return null;
             }
         }
 
