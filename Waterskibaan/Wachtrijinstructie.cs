@@ -6,22 +6,17 @@ using System.Threading.Tasks;
 
 namespace Waterskibaan
 {
-    class Wachtrijinstructie : IWachtrij
+    class Wachtrijinstructie : Wachtrij
     {
-        public int MAX_LENGTE_RIJ = 100;
-        public List<Sporter> GetAlleSporters()
+
+        public override int MAX_LENGTE_RIJ
         {
-            throw new NotImplementedException();
+            get { return 100; }
         }
 
-        public void SporterNeemPlaatsInRij(Sporter sporter)
+        public override string ToString()
         {
-            throw new NotImplementedException();
-        }
-
-        public List<Sporter> SportersVerlatenRij(int aantal)
-        {
-            throw new NotImplementedException();
+            return base.ToString();
         }
     }
 }

@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections.Generic;
 using System.Windows;
 using Waterskibaan.Properties;
 
@@ -13,6 +14,7 @@ namespace Waterskibaan
         {
             InitializeComponent();
             TestOpdracht8();
+            TestOpdracht10();
         }
 
         static void TestOpdracht8()
@@ -44,6 +46,33 @@ namespace Waterskibaan
 
             Console.WriteLine("");
 
+        }
+
+        static void TestOpdracht10()
+        {
+            Wachtrijinstructie wachtrijInstructie = new Wachtrijinstructie();
+            InstructieGroep instructieGroep = new InstructieGroep();
+            WachtrijStarten wachtrijStarten = new WachtrijStarten();
+
+            Console.ForegroundColor = ConsoleColor.Yellow;
+            Console.WriteLine("Opdracht 10:");
+            Console.ResetColor();
+
+            for (int i = 0; i < 100; i++)
+            {
+                wachtrijInstructie.SporterNeemPlaatsInRij(new Sporter(MoveCollection.GetWillekeurigeMoves()));
+            }
+
+            Console.WriteLine($"{wachtrijInstructie.ToString()}: {wachtrijInstructie.GetAlleSporters().Count}");
+
+            List<Sporter> sporters = wachtrijInstructie.SportersVerlatenRij(5);
+
+            foreach (Sporter sporter in sporters)
+            {
+                instructieGroep.SporterNeemPlaatsInRij(sporter);
+            }
+
+            Console.WriteLine($"{instructieGroep.ToString()}: {instructieGroep.GetAlleSporters().Count}\n");
         }
     }
 }
