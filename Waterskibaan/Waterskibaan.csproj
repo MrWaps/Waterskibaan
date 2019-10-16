@@ -61,6 +61,8 @@
     <Compile Include="EenBeen.cs" />
     <Compile Include="EenHand.cs" />
     <Compile Include="IMoves.cs" />
+    <Compile Include="InstructieGroep.cs" />
+    <Compile Include="IWachtrij.cs" />
     <Compile Include="Jump.cs" />
     <Compile Include="Kabel.cs" />
     <Compile Include="Lijn.cs" />
@@ -69,6 +71,7 @@
     <Compile Include="Omdraaien.cs" />
     <Compile Include="Skies.cs" />
     <Compile Include="Sporter.cs" />
+    <Compile Include="Wachtrijinstructie.cs" />
     <Compile Include="WaterskibaanProgram.cs" />
     <Compile Include="Zwemvest.cs" />
     <Page Include="MainWindow.xaml">
